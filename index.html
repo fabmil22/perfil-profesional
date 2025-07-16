@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fabián Alberto Miliani - Desarrollador Senior Frontend</title>
+		<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<style>
+			.gradient-bg {
+				background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+			}
+			.card {
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			.card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+			}
+			.iframe-container {
+				position: relative;
+				overflow: hidden;
+				width: 100%;
+				padding-top: 56.25%; /* 16:9 Aspect Ratio */
+			}
+			.responsive-iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				border: none;
+			}
+			.timeline-item {
+				position: relative;
+				padding-left: 2rem;
+				margin-bottom: 2rem;
+			}
+			.timeline-item:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 2px;
+				background-color: #e5e7eb;
+			}
+			.timeline-item:after {
+				content: '';
+				position: absolute;
+				left: -0.4rem;
+				top: 0.5rem;
+				height: 1rem;
+				width: 1rem;
+				border-radius: 50%;
+				background-color: #3b82f6;
+			}
+		</style>
+	</head>
+	<body
+		class="bg-gray-50 font-sans">
+		<!-- Navbar -->
+		<nav class="gradient-bg text-white shadow-lg">
+			<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+				<a href="#" class="text-2xl font-bold">Fabián Miliani</a>
+				<div class="hidden md:flex space-x-8">
+					<a href="#about" class="hover:text-gray-200">Sobre mí</a>
+					<a href="#skills" class="hover:text-gray-200">Habilidades</a>
+					<a href="#experience" class="hover:text-gray-200">Experiencia</a>
+					<a href="#agent" class="hover:text-gray-200">Mi Agente IA</a>
+					<a href="#contact" class="hover:text-gray-200">Contacto</a>
+				</div>
+				<button class="md:hidden focus:outline-none">
+					<i class="fas fa-bars text-xl"></i>
+				</button>
+			</div>
+		</nav>
+
+		<!-- Hero Section -->
+		<header class="bg-white py-16">
+			<div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+				<div class="md:w-1/2 mb-8 md:mb-0">
+					<h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Hola, soy
+						<span class="text-blue-600">Fabián Alberto Miliani</span>
+					</h1>
+					<p class="text-xl text-gray-600 mb-6">Desarrollador Senior Frontend</p>
+					<p class="text-gray-600 mb-8">Con más de 9 años de experiencia en desarrollo de aplicaciones web y plataformas de gestión administrativa para diferentes empresas.</p>
+					<div class="flex space-x-4">
+						<a href="#contact" class="gradient-bg text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition">Contáctame</a>
+						<a href="#agent" class="bg-white text-blue-600 border border-blue-600 px-6 py-3 rounded-lg hover:bg-gray-50 transition">Prueba mi Agente</a>
+					</div>
+				</div>
+				<div class="md:w-1/2 flex justify-center">
+					<img src="https://placehold.co/400x400" alt="Fabián Miliani" class="rounded-full w-64 h-64 object-cover shadow-xl">
+				</div>
+			</div>
+		</header>
+
+		<!-- About Section -->
+		<section id="about" class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Sobre Mí</h2>
+				<div class="bg-white rounded-xl shadow-md p-8">
+					<p class="text-gray-600 mb-6">
+						Soy un desarrollador senior frontend con más de 9 años de experiencia en el desarrollo de aplicaciones web y páginas web. He desarrollado plataformas para la gestión administrativa de diferentes empresas, trabajando con tecnologías como React, PHP, JavaScript, TypeScript, jQuery, AJAX, SCSS, Git, GitLab, Node, y metodologías como Scrum.
+					</p>
+					<p class="text-gray-600 mb-6">
+						También tengo experiencia con frameworks como Angular (desde la versión 2 hasta la última), Ionic y CakePHP. En programas de diseño, poseo un nivel avanzado en el manejo de Adobe.
+					</p>
+					<div class="flex flex-wrap gap-4 mt-8">
+						<div class="bg-blue-50 px-4 py-2 rounded-lg">
+							<i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+							<span class="text-gray-700">Licenciado en Publicidad - Universidad Alejandro de Humboldt</span>
+						</div>
+						<div class="bg-blue-50 px-4 py-2 rounded-lg">
+							<i class="fas fa-briefcase text-blue-600 mr-2"></i>
+							<span class="text-gray-700">9+ años de experiencia</span>
+						</div>
+						<div class="bg-blue-50 px-4 py-2 rounded-lg">
+							<i class="fas fa-globe text-blue-600 mr-2"></i>
+							<span class="text-gray-700">Español e Italiano</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Skills Section -->
+		<section id="skills" class="py-16 bg-white">
+			<div class="container mx-auto px-4">
+				<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Mis Habilidades</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="card bg-white rounded-xl shadow-md p-6 border-t-4 border-blue-600">
+						<div class="text-blue-600 text-4xl mb-4">
+							<i class="fab fa-react"></i>
+						</div>
+						<h3 class="text-xl font-bold text-gray-800 mb-2">Frontend</h3>
+						<p class="text-gray-600">javascript vanilla, Angular, jest,  TypeScript, HTML5, CSS3, SCSS, Redux ,
+														                            Rxjs
+						</p>
+					</div>
+					<div class="card bg-white rounded-xl shadow-md p-6 border-t-4 border-blue-600">
+						<div class="text-blue-600 text-4xl mb-4">
+							<i class="fas fa-server"></i>
+						</div>
+						<h3 class="text-xl font-bold text-gray-800 mb-2">Backend</h3>
+						<p class="text-gray-600">PHP, Node.js, CakePHP, APIs RESTful , nest.js , Python</p>
+					</div>
+					<div class="card bg-white rounded-xl shadow-md p-6 border-t-4 border-blue-600">
+						<div class="text-blue-600 text-4xl mb-4">
+							<i class="fas fa-mobile-alt"></i>
+						</div>
+						<h3 class="text-xl font-bold text-gray-800 mb-2">Desarrollo Móvil</h3>
+						<p class="text-gray-600">Ionic, Aplicaciones web responsivas</p>
+					</div>
+					<div class="card bg-white rounded-xl shadow-md p-6 border-t-4 border-blue-600">
+						<div class="text-blue-600 text-4xl mb-4">
+							<i class="fas fa-tools"></i>
+						</div>
+						<h3 class="text-xl font-bold text-gray-800 mb-2">Herramientas</h3>
+						<p class="text-gray-600">Git, GitLab, Docker, Visual Studio Code, Adobe Suite</p>
+					</div>
+					<div class="card bg-white rounded-xl shadow-md p-6 border-t-4 border-blue-600">
+						<div class="text-blue-600 text-4xl mb-4">
+							<i class="fas fa-search"></i>
+						</div>
+						<h3 class="text-xl font-bold text-gray-800 mb-2">SEO</h3>
+						<p class="text-gray-600">Optimización para motores de búsqueda, mejores prácticas web</p>
+					</div>
+					<div class="card bg-white rounded-xl shadow-md p-6 border-t-4 border-blue-600">
+						<div class="text-blue-600 text-4xl mb-4">
+							<i class="fas fa-users-cog"></i>
+						</div>
+						<h3 class="text-xl font-bold text-gray-800 mb-2">Metodologías</h3>
+						<p class="text-gray-600">Scrum, Desarrollo Ágil, Gestión de Proyectos</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Experience Section -->
+		<section id="experience" class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Experiencia Profesional</h2>
+				<div class="bg-white rounded-xl shadow-md p-8">
+					<div class="timeline-item">
+						<h3 class="text-xl font-bold text-gray-800">Desarrollador Senior Frontend
+						</h3>
+
+						<p class="text-blue-600 font-semibold">GFT Technologies</p>
+						<p class="text-gray-500 mb-2">mayo de 2024 - Presente (1 año 3 meses)</p>
+						<p class="text-gray-600">Madrid, Comunidad de Madrid, España</p>
+					</div>
+					<div class="timeline-item">
+						<h3 class="text-xl font-bold text-gray-800">Desarrollador de aplicación de software</h3>
+						<p class="text-blue-600 font-semibold">Plexus Tech</p>
+						<p class="text-gray-500 mb-2">mayo de 2023 - junio de 2024 (1 año 2 meses)</p>
+						<p class="text-gray-600">Madrid, Comunidad de Madrid, España</p>
+					</div>
+					<div class="timeline-item">
+						<h3 class="text-xl font-bold text-gray-800">Team Lead Manager</h3>
+						<p class="text-blue-600 font-semibold">Searchit</p>
+						<p class="text-gray-500 mb-2">abril de 2022 - agosto de 2023 (1 año 5 meses)</p>
+					</div>
+					<div class="timeline-item">
+						<h3 class="text-xl font-bold text-gray-800">Desarrollador de front-end</h3>
+						<p class="text-blue-600 font-semibold">Paradigma Digital</p>
+						<p class="text-gray-500 mb-2">mayo de 2018 - marzo de 2022 (3 años 11 meses)</p>
+						<p class="text-gray-600">Aravaca</p>
+					</div>
+					<div class="timeline-item">
+						<h3 class="text-xl font-bold text-gray-800">Programador sénior</h3>
+						<p class="text-blue-600 font-semibold">Sportsnet Red Social Deportiva y Eventos, S.L.</p>
+						<p class="text-gray-500 mb-2">julio de 2016 - noviembre de 2016 (5 meses)</p>
+						<p class="text-gray-600">Alcobendas y alrededores, España</p>
+						<p class="text-gray-600">Desarrollar aplicativos web y sistemas administrativos para diferentes clientes empresariales. Programación Front end con PHP, Angular, javascript, html 5, Ajax, jquery, entre otros.</p>
+					</div>
+					<div class="timeline-item">
+						<h3 class="text-xl font-bold text-gray-800">GERENTE DE DESARROLLO</h3>
+						<p class="text-blue-600 font-semibold">LIDERWEB.CO</p>
+						<p class="text-gray-500 mb-2">septiembre de 2013 - febrero de 2016 (2 años 6 meses)</p>
+						<p class="text-gray-600">Crear y desarrollo de sistemas y aplicaciones web. Planificación y creación de sitios web. Asesoramiento en desarrollo y tecnología para empresas.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Certifications Section -->
+		<section class="py-16 bg-white">
+			<div class="container mx-auto px-4">
+				<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Certificaciones</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="card bg-white rounded-xl shadow-md p-6">
+						<div class="text-blue-600 text-4xl mb-4">
+							<i class="fas fa-certificate"></i>
+						</div>
+						<h3 class="text-xl font-bold text-gray-800 mb-2">IBM Advance Career</h3>
+						<p class="text-gray-600">Education web site developer program</p>
+					</div>
+					<div class="card bg-white rounded-xl shadow-md p-6">
+						<div class="text-blue-600 text-4xl mb-4">
+							<i class="fas fa-code"></i>
+						</div>
+						<h3 class="text-xl font-bold text-gray-800 mb-2">Visual Studio Code 2022</h3>
+						<p class="text-gray-600">Esencial</p>
+					</div>
+					<div class="card bg-white rounded-xl shadow-md p-6">
+						<div class="text-blue-600 text-4xl mb-4">
+							<i class="fab fa-python"></i>
+						</div>
+						<h3 class="text-xl font-bold text-gray-800 mb-2">Python</h3>
+						<p class="text-gray-600">Esencial</p>
+					</div>
+					<div class="card bg-white rounded-xl shadow-md p-6">
+						<div class="text-blue-600 text-4xl mb-4">
+							<i class="fab fa-js"></i>
+						</div>
+						<h3 class="text-xl font-bold text-gray-800 mb-2">TypeScript</h3>
+						<p class="text-gray-600">Avanzado y Trucos</p>
+					</div>
+					<div class="card bg-white rounded-xl shadow-md p-6">
+						<div class="text-blue-600 text-4xl mb-4">
+							<i class="fab fa-angular"></i>
+						</div>
+						<h3 class="text-xl font-bold text-gray-800 mb-2">Angular</h3>
+						<p class="text-gray-600">Buenas prácticas</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Agent Section -->
+		<section id="agent" class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4">
+
+
+				<div
+					class="bg-white rounded-xl shadow-md p-6 mb-8">
+					<!-- Reemplaza la sección del iframe por esto -->
+					<div class="bg-white rounded-xl shadow-md p-6 mb-8 text-center">
+						<div class="py-8">
+							<h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Mi Agente IA</h2>
+
+
+							Interactúa con mi asistente virtual desarrollado con Gradio y alojado en Hugging Face Spaces
+							<p class="text-gray-600 mb-6">Debido a restricciones de seguridad, mi agente no puede mostrarse directamente en esta página. Haz clic en el botón para interactuar con él.</p>
+							<a href="https://huggingface.co/spaces/fabmil22/my_perfil" target="_blank" class="gradient-bg text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition inline-block">
+
+								<i class="fas fa-robot mr-2"></i>Interactuar con mi Agente IA
+							</a>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contact" class="py-16 bg-white">
+			<div class="container mx-auto px-4">
+				<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Contacto</h2>
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<!-- <div class="bg-gray-50 rounded-xl shadow-md p-8">
+																										<h3 class="text-xl font-bold text-gray-800 mb-4">Envíame un mensaje</h3>
+																										<form>
+																											<div class="mb-4">
+																												<label for="name" class="block text-gray-700 mb-2">Nombre</label>
+																												<input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+																											</div>
+																											<div class="mb-4">
+																												<label for="email" class="block text-gray-700 mb-2">Email</label>
+																												<input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+																											</div>
+																											<div class="mb-4">
+																												<label for="message" class="block text-gray-700 mb-2">Mensaje</label>
+																												<textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+																											</div>
+																											<button type="submit" class="gradient-bg text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition w-full">Enviar Mensaje</button>
+																										</form>
+																									</div> -->
+					<div class="bg-gray-50 rounded-xl shadow-md ">
+						<h3 class="text-xl font-bold text-gray-800 mb-4">Información de contacto</h3>
+						<div class="space-y-4">
+							<div class="flex items-start">
+								<div class="text-blue-600 text-xl mr-4">
+									<i class="fas fa-envelope"></i>
+								</div>
+								<div>
+									<h4 class="font-bold text-gray-700">Email</h4>
+									<p class="text-gray-600">fabianfabian22@hotmail.com</p>
+								</div>
+							</div>
+							<div class="flex items-start">
+								<div class="text-blue-600 text-xl mr-4">
+									<i class="fas fa-map-marker-alt"></i>
+								</div>
+								<div>
+									<h4 class="font-bold text-gray-700">Ubicación</h4>
+									<p class="text-gray-600">Gines, Andalucía, España</p>
+								</div>
+							</div>
+							<div class="flex items-start">
+								<div class="text-blue-600 text-xl mr-4">
+									<i class="fas fa-globe"></i>
+								</div>
+								<div>
+									<h4 class="font-bold text-gray-700">Sitio Web</h4>
+									<p class="text-gray-600">
+										<a href="https://fbmiliani.com" class="text-blue-600 hover:underline">fbmiliani.com</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="mt-8">
+							<h4 class="font-bold text-gray-700 mb-4">Redes sociales</h4>
+							<div class="flex space-x-4">
+								<a href="https://www.linkedin.com/in/fabian-alberto-miliani-70440a3a" class="text-blue-600 hover:text-blue-800 text-2xl" target="_blank">
+									<i class="fab fa-linkedin"></i>
+								</a>
+								<a href="#" class="text-blue-600 hover:text-blue-800 text-2xl">
+									<i class="fab fa-github"></i>
+								</a>
+								<a href="#" class="text-blue-600 hover:text-blue-800 text-2xl">
+									<i class="fab fa-twitter"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="gradient-bg text-white py-8">
+			<div class="container mx-auto px-4">
+				<div class="flex flex-col md:flex-row justify-between items-center">
+					<div class="mb-4 md:mb-0">
+						<h3 class="text-xl font-bold">Fabián Alberto Miliani</h3>
+						<p class="text-gray-200">Desarrollador Senior Frontend</p>
+					</div>
+					<div>
+						<p class="text-gray-200">&copy; 2025 Fabián Alberto Miliani. Todos los derechos reservados.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			// Script para navegación móvil
+			document.querySelector('button').addEventListener('click', function () {
+				const nav = document.querySelector('.md\\:flex');
+				nav.classList.toggle('hidden');
+				nav.classList.toggle('flex');
+				nav.classList.toggle('flex-col');
+				nav.classList.toggle('absolute');
+				nav.classList.toggle('top-16');
+				nav.classList.toggle('right-0');
+				nav.classList.toggle('bg-blue-700');
+				nav.classList.toggle('p-4');
+				nav.classList.toggle('rounded-lg');
+				nav.classList.toggle('shadow-lg');
+				nav.classList.toggle('z-50');
+			});
+		</script>
+	</body>
+</html>
